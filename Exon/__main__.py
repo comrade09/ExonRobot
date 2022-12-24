@@ -143,8 +143,8 @@ buttons = [
         )
     ],
     [
-        InlineKeyboardButton(text="ᴄᴏᴍᴍᴀɴᴅs ⚡", callback_data="help_back"),
-        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ ✨", callback_data="about_"),
+        InlineKeyboardButton(text="ᴄᴏᴍᴍᴀɴᴅꜱ ⚡", callback_data="help_back"),
+        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ ", url=f"t.me/TPX_Bots"),
     ],
 ]
 
