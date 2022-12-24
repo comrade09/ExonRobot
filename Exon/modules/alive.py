@@ -66,7 +66,8 @@ async def restart(client, m: Message):
         "CAACAgUAAx0CZIiVngABBHAzYwdi9OIVTQ7DYELAqMl46fgnK4wAAjsIAAKagolX-O0V64tvzK8pBA"
     )
     await asyncio.sleep(0.1)
-   ,
+    await m.reply_photo(https://telegra.ph/file/ae974ddfed032f03a2454.jpg
+        ,
         caption=f"""**ʜᴇʏ, ɪ ᴀᴍ {BOT_NAME}**
      ▱▱▱▱▱▱▱▱▱▱▱▱
  `Hey There!` [👩‍💼](https://telegra.ph/file/ae974ddfed032f03a2454.jpg) `My name is` *Power*
