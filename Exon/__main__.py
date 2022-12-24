@@ -118,6 +118,7 @@ PM_START_TEX = """
 
 PM_START_TEXT = """
 *ʜᴇʟʟᴏ {} !*
+`Hey There!` [👩‍💼](https://telegra.ph/file/0ed48df18f4175d61b5d8.jpg) `My name is` *Gabi Braun*
 ━━━━━━━ *ᴇxᴏɴ* ━━━━━━━
 ᴇxᴏɴ ʀᴏʙᴏᴛ ɪꜱ ᴀ 
 ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ 
