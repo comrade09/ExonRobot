@@ -73,7 +73,7 @@ async def restart(client, m: Message):
         ,
         caption=f"""**ʜᴇʏ, ɪ ᴀᴍ {BOT_NAME}**
      ▱▱▱▱▱▱▱▱▱▱▱▱
- `Hey There!` [👩‍💼](https://telegra.ph/file/ae974ddfed032f03a2454.jpg) `My name is` *Power*
+ 
 » **ᴍʏ ᴏᴡɴᴇʀ :** [𝐀ᴛʜ](https://t.me/{OWNER_USERNAME})
 » **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ :** `{lver}`
 » **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{tver}`
