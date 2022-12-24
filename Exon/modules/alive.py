@@ -33,10 +33,15 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from telegram import __version__ as lver
 from telethon import __version__ as tver
 
-from ABG.helper import PHOTO
+
 from Exon import BOT_NAME
 from Exon import BOT_USERNAME as fuck
 from Exon import OWNER_USERNAME, SUPPORT_CHAT, UPDATES_CHANNEL, pgram
+
+PHOTO = [
+    "https://telegra.ph/file/ae974ddfed032f03a2454.jpg",
+    "https://telegra.ph/file/ae974ddfed032f03a2454.jpg",
+]
 
 ASAU = [
     [
@@ -65,9 +70,7 @@ async def restart(client, m: Message):
     umm = await m.reply_sticker(
         "CAACAgUAAx0CZIiVngABBHAzYwdi9OIVTQ7DYELAqMl46fgnK4wAAjsIAAKagolX-O0V64tvzK8pBA"
     )
-    await asyncio.sleep(0.1)
-    await m.reply_photo(https://telegra.ph/file/ae974ddfed032f03a2454.jpg
-        ,
+    await asyncio.sleep(0.1),
         caption=f"""**ʜᴇʏ, ɪ ᴀᴍ {BOT_NAME}**
      ▱▱▱▱▱▱▱▱▱▱▱▱
  `Hey There!` [👩‍💼](https://telegra.ph/file/ae974ddfed032f03a2454.jpg) `My name is` *Power*
