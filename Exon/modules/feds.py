@@ -110,7 +110,7 @@ def new_fed(update: Update, context: CallbackContext):
         x = sql.new_fed(user.id, fed_name, fed_id)
         if not x:
             update.effective_message.reply_text(
-                "Can't ғᴇᴅᴇʀᴀᴛᴇ! ᴘʟᴇᴀsᴇ ᴄᴏɴᴛᴀᴄᴛ @AbishnoiMF if the problem persist."
+                "Can't ғᴇᴅᴇʀᴀᴛᴇ! ᴘʟᴇᴀsᴇ ᴄᴏɴᴛᴀᴄᴛ @shinobu_support if the problem persist."
             )
             return
 
