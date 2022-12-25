@@ -48,7 +48,7 @@ from telegram.ext import (
 from telegram.utils.helpers import mention_html
 
 import Exon.modules.sql.chatbot_sql as sql
-from Exon import dispatcher
+from Exon import dispatcher , BOT_ID, BOT_NAME
 from Exon.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
 from Exon.modules.helper_funcs.filters import CustomFilters
 from Exon.modules.log_channel import gloggable
