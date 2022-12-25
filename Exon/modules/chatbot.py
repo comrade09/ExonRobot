@@ -47,82 +47,97 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html
 
-import Exon.modules.sql.kuki_sql as sql
+import Exon.modules.sql.chatbot_sql as sql
 from Exon import dispatcher
 from Exon.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
 from Exon.modules.helper_funcs.filters import CustomFilters
 from Exon.modules.log_channel import gloggable
 
-
+@run_async
 @user_admin_no_reply
 @gloggable
-def kukirm(update: Update, context: CallbackContext) -> str:
+def fallenrm(update: Update, context: CallbackContext) -> str:
     query: Optional[CallbackQuery] = update.callback_query
     user: Optional[User] = update.effective_user
-    if match := re.match(r"rm_chat\((.+?)\)", query.data):
-        user_id = match[1]
+    match = re.match(r"rm_chat\((.+?)\)", query.data)
+    if match:
+        user_id = match.group(1)
         chat: Optional[Chat] = update.effective_chat
-        if is_kuki := sql.rem_kuki(chat.id):
-            sql.rem_kuki(user_id)
+        is_fallen = sql.set_fallen(chat.id)
+        if is_fallen:
+            is_fallen = sql.set_fallen(user_id)
             return (
                 f"<b>{html.escape(chat.title)}:</b>\n"
-                f"AI_ᴅɪsᴀʙʟᴇᴅ\n"
-                f"<b>ᴀᴅᴍɪɴ:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+                f"AI_DISABLED\n"
+                f"<b>Admin :</b> {mention_html(user.id, html.escape(user.first_name))}\n"
             )
         else:
-            query.answer("ᴄʜᴀᴛʙᴏᴛ ᴜɴᴀᴄᴛɪᴠᴇ")
-            query.message.delete()
+            update.effective_message.edit_text(
+                "{} ᴄʜᴀᴛʙᴏᴛ ᴅɪsᴀʙʟᴇᴅ ʙʏ {}.".format(
+                    dispatcher.bot.first_name, mention_html(user.id, user.first_name)
+                ),
+                parse_mode=ParseMode.HTML,
+            )
 
     return ""
 
 
+@run_async
 @user_admin_no_reply
 @gloggable
-def kukiadd(update: Update, context: CallbackContext) -> str:
+def fallenadd(update: Update, context: CallbackContext) -> str:
     query: Optional[CallbackQuery] = update.callback_query
     user: Optional[User] = update.effective_user
-    if match := re.match(r"add_chat\((.+?)\)", query.data):
-        user_id = match[1]
+    match = re.match(r"add_chat\((.+?)\)", query.data)
+    if match:
+        user_id = match.group(1)
         chat: Optional[Chat] = update.effective_chat
-        if is_kuki := sql.set_kuki(chat.id):
-            sql.set_kuki(user_id)
+        is_fallen = sql.rem_fallen(chat.id)
+        if is_fallen:
+            is_fallen = sql.rem_fallen(user_id)
             return (
                 f"<b>{html.escape(chat.title)}:</b>\n"
-                f"ᴀɪ_ᴇɴᴀʙʟᴇ\n"
-                f"<b>ᴀᴅᴍɪɴ:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+                f"AI_ENABLE\n"
+                f"<b>Admin :</b> {mention_html(user.id, html.escape(user.first_name))}\n"
             )
         else:
-            query.answer("ᴄʜᴀᴛʙᴏᴛ ᴀᴄᴛɪᴠᴇ")
-            query.message.delete()
+            update.effective_message.edit_text(
+                "{} ᴄʜᴀᴛʙᴏᴛ ᴇɴᴀʙʟᴇᴅ ʙʏ {}.".format(
+                    dispatcher.bot.first_name, mention_html(user.id, user.first_name)
+                ),
+                parse_mode=ParseMode.HTML,
+            )
 
     return ""
 
 
+@run_async
 @user_admin
 @gloggable
-def kuki(update: Update, context: CallbackContext):
-    update.effective_user
+def fallen(update: Update, context: CallbackContext):
     message = update.effective_message
-    msg = "ᴄʜᴏᴏsᴇ ᴀɴ ᴏᴘᴛɪᴏɴ ʙᴀʙʏ "
+    msg = "• ᴄʜᴏᴏsᴇ ᴀɴ ᴏᴩᴛɪᴏɴ ᴛᴏ ᴇɴᴀʙʟᴇ/ᴅɪsᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ"
     keyboard = InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton(text="ᴇɴᴀʙʟᴇ", callback_data="add_chat({})")],
-            [InlineKeyboardButton(text="ᴅɪsᴀʙʟᴇ", callback_data="rm_chat({})")],
+            [
+                InlineKeyboardButton(text="ᴇɴᴀʙʟᴇ", callback_data="add_chat({})"),
+                InlineKeyboardButton(text="ᴅɪsᴀʙʟᴇ", callback_data="rm_chat({})"),
+            ],
         ]
     )
     message.reply_text(
-        msg,
+        text=msg,
         reply_markup=keyboard,
         parse_mode=ParseMode.HTML,
     )
 
 
-def kuki_message(context: CallbackContext, message):
+def fallen_message(context: CallbackContext, message):
     reply_message = message.reply_to_message
-    if message.text.lower() == "Exon":
+    if message.text.lower() == "fallen":
         return True
     if reply_message:
-        if reply_message.from_user.id == context.bot.get_me().id:
+        if reply_message.from_user.id == BOT_ID:
             return True
     else:
         return False
@@ -132,39 +147,19 @@ def chatbot(update: Update, context: CallbackContext):
     message = update.effective_message
     chat_id = update.effective_chat.id
     bot = context.bot
-    is_kuki = sql.is_kuki(chat_id)
-    if not is_kuki:
+    is_fallen = sql.is_fallen(chat_id)
+    if is_fallen:
         return
 
     if message.text and not message.document:
-        if not kuki_message(context, message):
+        if not fallen_message(context, message):
             return
-        Message = message.text
         bot.send_chat_action(chat_id, action="typing")
-        kukiurl = requests.get(
-            f"https://kukiapi.xyz/api/apikey=5281955434-KUKIyq4NCB2Ca8/Himawari/@nekoarsh/message={Message}"
-        )
-
-        Kuki = json.loads(kukiurl.text)
-        kuki = Kuki["reply"]
-        sleep(0.3)
-        message.reply_text(kuki, timeout=60)
-
-
-def list_all_chats(update: Update, context: CallbackContext):
-    chats = sql.get_all_kuki_chats()
-    text = "<b>ᴋᴜᴋɪ-ᴇɴᴀʙʟᴇᴅ ᴄʜᴀᴛs</b>\n"
-    for chat in chats:
-        try:
-            x = context.bot.get_chat(int(*chat))
-            name = x.title or x.first_name
-            text += f"• <code>{name}</code>\n"
-        except (BadRequest, Unauthorized):
-            sql.rem_kuki(*chat)
-        except RetryAfter as e:
-            sleep(e.retry_after)
-    update.effective_message.reply_text(text, parse_mode="HTML")
-
+        url = f"https://kora-api.vercel.app/chatbot/2d94e37d-937f-4d28-9196-bd5552cac68b/{BOT_NAME}/Anonymous/message={message.text}"
+        request = requests.get(url)
+        results = json.loads(request.text)
+        sleep(0.5)
+        message.reply_text(results['reply'])
 
 __help__ = """
 ᴄʜᴀᴛʙᴏᴛ ᴜᴛɪʟɪᴢᴇs ᴛʜᴇ ᴋᴜᴋɪ's API ᴡʜɪᴄʜ ᴀʟʟᴏᴡs ᴇxᴏɴ ᴛᴏ ᴛᴀʟᴋ ᴀɴᴅ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴍᴏʀᴇ ɪɴᴛᴇʀᴀᴄᴛɪᴠᴇ ɢʀᴏᴜᴘ ᴄʜᴀᴛ ᴇxᴘᴇʀɪᴇɴᴄᴇ.
