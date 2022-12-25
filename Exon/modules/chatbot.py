@@ -53,7 +53,6 @@ from Exon.modules.helper_funcs.chat_status import user_admin, user_admin_no_repl
 from Exon.modules.helper_funcs.filters import CustomFilters
 from Exon.modules.log_channel import gloggable
 
-@run_async
 @user_admin_no_reply
 @gloggable
 def fallenrm(update: Update, context: CallbackContext) -> str:
@@ -82,7 +81,6 @@ def fallenrm(update: Update, context: CallbackContext) -> str:
     return ""
 
 
-@run_async
 @user_admin_no_reply
 @gloggable
 def fallenadd(update: Update, context: CallbackContext) -> str:
@@ -111,7 +109,6 @@ def fallenadd(update: Update, context: CallbackContext) -> str:
     return ""
 
 
-@run_async
 @user_admin
 @gloggable
 def fallen(update: Update, context: CallbackContext):
