@@ -32,9 +32,9 @@ async def carbon_func(_, message):
     carbon.close()
 
 
-@register(pattern="^/repo$")
+@register(pattern="^/repooooooooooooooooooooooooooooooooo$")
 async def _(event):
-    loda = "➥ [EXON](you thought i will give you repo naah bro)"
+    loda = "➥ [EXON])"
     lund = await event.reply(loda)
     await asyncio.sleep(10)
     await event.delete()
@@ -46,5 +46,5 @@ __mod_name__ = "𝙲ᴀʀʙᴏɴ"
 __help__ = """
 
 /carbon *:* ᴍᴀᴋᴇs ᴄᴀʀʙᴏɴ ғᴏʀ ʀᴇᴘʟɪᴇᴅ ᴛᴇxᴛ
-/repo *:*🌟
+
  """
