@@ -118,10 +118,9 @@ PM_START_TEX = """
 
 PM_START_TEXT = """
 *Hᴇʏ {} !*
-`Hey There!` [⚡️](https://telegra.ph/file/286230dd39b81f4aa84c7.jpg) `ᴍʏ ɴᴀᴍᴇ ɪꜱ ` *ᴀsʜɪsʜ ʀᴀᴊ*
+`Hey There!` [⚡️](https://telegra.ph/file/286230dd39b81f4aa84c7.jpg)`ᴍʏ ɴᴀᴍᴇ ɪꜱ ` *ᴀsʜɪsʜ ʀᴀᴊ*
  ᴍᴀᴅᴇ ᴛʜɪs ʙᴏᴛ ᴛᴏ ᴍᴀɪɴᴛᴀɪɴ sᴜᴘᴇʀɢʀᴏᴜᴘs ᴇᴀsɪʟʏ 
-ᴏᴡɴᴇʀ - @ashishraj_0011
-ᴅᴇᴠ - @Ath2023
+
 ──────────────────
 ๏ ʜɪᴛ /ʜᴇʟᴘ ᴛᴏ ᴇxᴘʟᴏʀᴇ ᴍʏ ᴄᴏᴍᴍᴀɴᴅs
      ★  *ᴜᴘᴛɪᴍᴇ :* `{}` 
