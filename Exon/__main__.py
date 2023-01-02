@@ -118,10 +118,12 @@ PM_START_TEX = """
 
 PM_START_TEXT = """
 *Hᴇʏ {} !*
-`Hey There!` [⚡️](https://telegra.ph/file/ae974ddfed032f03a2454.jpg) `ᴍʏ ɴᴀᴍᴇ ɪꜱ ` *ᴘᴏᴡᴇʀ*
-➻ ᴘᴏᴡᴇʀ ɪs ᴀ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡʜɪᴄʜ ᴄᴀɴ ʜᴇʟᴘ ʏᴏᴜ ᴛᴏ ᴍᴀɴᴀɢᴇ ᴀɴᴅ sᴇᴄᴜʀᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴡɪᴛʜ ʜᴜɢᴇ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ᴘʟᴜɢɪɴs.
+`Hey There!` [⚡️](https://telegra.ph/file/286230dd39b81f4aa84c7.jpg) `ᴍʏ ɴᴀᴍᴇ ɪꜱ ` *ᴀsʜɪsʜ ʀᴀᴊ*
+ ᴍᴀᴅᴇ ᴛʜɪs ʙᴏᴛ ᴛᴏ ᴍᴀɪɴᴛᴀɪɴ sᴜᴘᴇʀɢʀᴏᴜᴘs ᴇᴀsɪʟʏ 
+ᴏᴡɴᴇʀ - @ashishraj_0011
+ᴅᴇᴠ - @Ath2023
 ──────────────────
-๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʜᴇʟᴩ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍʏ ᴍᴏᴅᴜʟᴇs ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs.
+๏ ʜɪᴛ /ʜᴇʟᴘ ᴛᴏ ᴇxᴘʟᴏʀᴇ ᴍʏ ᴄᴏᴍᴍᴀɴᴅs
      ★  *ᴜᴘᴛɪᴍᴇ :* `{}` 
      ★  *ᴜsᴇʀs :* `{}`
      ★  *ᴄʜᴀᴛs :* `0{}`
@@ -144,7 +146,7 @@ buttons = [
     ],
     [
         InlineKeyboardButton(text="ᴄᴏᴍᴍᴀɴᴅꜱ ⚡", callback_data="help_back"),
-        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ ", url=f"t.me/TPX_Bots"),
+        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ ", url=f"t.me/neet_sap"),
     ],
 ]
 
