@@ -74,7 +74,10 @@ async def restart(client, m: Message):
         caption=f"""**ʜᴇʏ, ɪ ᴀᴍ {BOT_NAME}**
      ▱▱▱▱▱▱▱▱▱▱▱▱
  
-» **ᴍʏ ᴏᴡɴᴇʀ :** [𝐀ᴛʜ](https://t.me/{OWNER_USERNAME})
+» **ᴍʏ ᴏᴡɴᴇʀ :** [ᴀsʜɪsʜ ʀᴀᴊ](https://t.me/{OWNER_USERNAME})
+» ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ @Ath2023
+» ɪ ᴀᴍ ᴡᴏʀᴋɪɴɢ ғɪɴᴇ ᴀs ᴀʟᴡᴀʏs 
+» sʏsᴛᴇᴍ ɪɴғᴏ ʙᴇʟᴏᴡ
 » **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ :** `{lver}`
 » **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{tver}`
 » **ᴘʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ :** `{pver}`
