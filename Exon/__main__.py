@@ -118,7 +118,7 @@ PM_START_TEX = """
 
 PM_START_TEXT = """
 *Hᴇʏ {} !*
-`Hey There!` [⚡️](https://telegra.ph/file/286230dd39b81f4aa84c7.jpg)`ᴍʏ ɴᴀᴍᴇ ɪꜱ ` *Obito *
+`Hey There!` [⚡️](https://telegra.ph/file/318be7a0c8c6c5a084a8b.jpg)`ᴍʏ ɴᴀᴍᴇ ɪꜱ ` *Obito *
  ᴍᴀᴅᴇ ᴛʜɪs ʙᴏᴛ ᴛᴏ ᴍᴀɪɴᴛᴀɪɴ sᴜᴘᴇʀɢʀᴏᴜᴘs ᴇᴀsɪʟʏ 
 
 ──────────────────
