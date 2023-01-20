@@ -145,7 +145,7 @@ buttons = [
     ],
     [
         InlineKeyboardButton(text="ᴄᴏᴍᴍᴀɴᴅꜱ ⚡", callback_data="help_back"),
-        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ ", url=f"t.me/neet_sap"),
+        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ ", url=f"t.me/linklockernet"),
     ],
 ]
 
